@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Alunos</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Lista de Alunos</h1>
+    </header>
+    <main>
+        <div class="add-aluno">
+            <fieldset>
+                <div class="d-flex">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome">
+                    </div>
+                    <div>
+                        <label for="matricula">Matrícula</label>
+                        <input type="text" id="matricula">
+                    </div>
+                    <div>
+                        <label for="nota1">Nota 1</label>
+                        <input type="number" min="0" max="10" id="nota1" onkeyup="onKeyUpNota('nota1')">
+                    </div>
+                    <div>
+                        <label for="nota2">Nota 2</label>
+                        <input type="number" min="0" max="10" id="nota2" onkeyup="onKeyUpNota('nota2')">
+                    </div>
+                    <div>
+                        <label for="nota3">Nota 3</label>
+                        <input type="number" min="0" max="10" id="nota3" onkeyup="onKeyUpNota('nota3')">
+                    </div>
+                </div>
+
+                <button onclick="createAluno()">Adicionar</button>
+            </fieldset>
+        </div>
+        <div class="table">
+            <table border="1">
+                <thead>
+                    <th>Nome</th>
+                    <th>Matrícula</th>
+                    <th>Nota 1</th>
+                    <th>Nota 2</th>
+                    <th>Nota 3</th>
+                    <th>Média</th>
+                    <th>Ação</th>
+                </thead>
+                <tbody id="tbody">
+                    <td colspan="7" class="text-center">
+                        Não há dados.
+                    </td>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
